@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ea4219352044f41b79dfbb8ac3e4eeaf
+guid: 66214ad7323b1419aa341d34263b7a60
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1177360397921498427
-    second: bodega_0
+      213: 619121617179567258
+    second: bodega_icon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bodega_0
+      name: bodega_icon_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1264
-        height: 1064
+        x: 33
+        y: 9
+        width: 259
+        height: 325
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b3539b24b03d65010800000000000000
-      internalID: 1177360397921498427
+      spriteID: a94e0c0a4df879800800000000000000
+      internalID: 619121617179567258
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bodega_0: 1177360397921498427
+      bodega_icon_0: 619121617179567258
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

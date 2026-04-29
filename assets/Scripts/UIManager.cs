@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
@@ -10,6 +11,10 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI auraText;
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI timeText;
+
+      [Header("Drunk indikator")]
+    public GameObject drunkContainer;  
+    public Image drunkFill;           
 
     float currentHour = 21f;
 
@@ -33,10 +38,16 @@ public class UIManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Slå TimeText til/fra baseret på hvilken scene der loader
         bool inBodega = scene.name == "BodegaScene";
+        bool inTransport = scene.name == "TransportScene";
+
+        // Tid kun i BodegaScene
         if (timeText != null)
             timeText.gameObject.SetActive(inBodega);
+
+        // Drunk bar kun i BodegaScene og TransportScene
+        if (drunkContainer != null)
+            drunkContainer.SetActive(inBodega || inTransport);
     }
 
     void Update()
@@ -49,13 +60,18 @@ public class UIManager : MonoBehaviour
         // Opdater tid hvis TimeText er aktiv
         if (timeText != null && timeText.gameObject.activeSelf)
             timeText.text = GetTimeString();
+
+              if (drunkFill != null)
+            drunkFill.fillAmount = GameManager.Instance.drunkLevel / 100f;
     }
 
     public void StartBarNight()
     {
-        currentHour = 21f;
-        if (timeText != null)
-            timeText.gameObject.SetActive(true);
+     currentHour = 21f;
+    if (timeText != null)
+        timeText.gameObject.SetActive(true);
+             if (drunkContainer != null)
+            drunkContainer.SetActive(true);
     }
 
     public void AdvanceTime(float minutes)
@@ -63,13 +79,14 @@ public class UIManager : MonoBehaviour
         currentHour += minutes / 60f;
         Debug.Log("Tid nu: " + GetTimeString());
 
-        if (currentHour >= 26f)
+        if (currentHour >= 24f)
             BarCloses();
     }
 
     void BarCloses()
     {
-        Debug.Log("Baren lukker!");
+      
+          currentHour = 21f;
         SceneManager.LoadScene("TransportScene");
     }
 

@@ -11,6 +11,7 @@ public class VenueButton : MonoBehaviour,
     [Header("Venue info")]
     public string venueName = "Bodega";
     public int requiredAura = 0;
+    public string aabningsTid = "21:00 - 02:00";
 
     [Header("Referencer")]
     public Image venueImage;
@@ -39,11 +40,11 @@ public class VenueButton : MonoBehaviour,
         if (isUnlocked)
         {
             venueImage.color = new Color(1f, 1f, 0.7f, 1f);
-            tooltipText.text = $"{venueName}\nTryk for at gå ind";
+            tooltipText.text = $"{venueName}\nÅben: {aabningsTid}";
         }
         else
         {
-            tooltipText.text = $"Ikke nok aura\nDu mangler {requiredAura - GameManager.Instance.auraPoints} point";
+            tooltipText.text = $"{venueName}\nDu mangler {requiredAura - GameManager.Instance.auraPoints} point\nÅben: {aabningsTid}";
         }
 
         tooltipObject.SetActive(true);

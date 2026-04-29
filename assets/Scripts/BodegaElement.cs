@@ -29,28 +29,31 @@ public class BodegaElement : MonoBehaviour,
         tooltipObject.transform.localScale = Vector3.zero;
     }
 
-    public void OnPointerEnter(PointerEventData e)
+public void OnPointerEnter(PointerEventData e)
+{
+    bool harPenge = GameManager.Instance.money >= moneyCost;
+
+    if (!harPenge)
     {
-        bool harPenge = GameManager.Instance.money >= moneyCost;
+        elementImage.color = new Color(0.3f, 0.3f, 0.3f, 1f);
+        tooltipText.text = $"{elementNavn}\ntoo broke";
+    }
+    else
+    {
+        elementImage.color = new Color(1f, 0.95f, 0.7f, 1f);
 
-        if (!harPenge)
-        {
-            elementImage.color = new Color(0.3f, 0.3f, 0.3f, 1f);
-            tooltipText.text = $"{beskrivelse}\nIkke råd 💸";
-        }
-        else
-        {
-            elementImage.color = new Color(1f, 0.95f, 0.7f, 1f);
-            string auraStr  = auraCost >= 0 ? $"+{auraCost} aura" : $"{auraCost} aura";
-            string moneyStr = moneyCost > 0 ? $"-{moneyCost} kr" : "gratis";
-            tooltipText.text = $"{beskrivelse}\n{auraStr}  ·  {moneyStr}";
-        }
+        string moneyStr = moneyCost > 0 ? $"{moneyCost}kr" : "for free";
+        string tidStr = tidsMinutter >= 60 
+            ? $"{tidsMinutter/60f:0.#} time" 
+            : $"{tidsMinutter} min";
 
-        tooltipObject.SetActive(true);
-        StopAllCoroutines();
-        StartCoroutine(ScaleTooltip(Vector3.zero, Vector3.one));
+        tooltipText.text = $"{elementNavn}\n{moneyStr}\n{tidStr}";
     }
 
+    tooltipObject.SetActive(true);
+    StopAllCoroutines();
+    StartCoroutine(ScaleTooltip(Vector3.zero, Vector3.one));
+}
     public void OnPointerExit(PointerEventData e)
     {
         bool harPenge = GameManager.Instance.money >= moneyCost;

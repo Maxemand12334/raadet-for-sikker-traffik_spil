@@ -27,4 +27,10 @@ public class GameManager : MonoBehaviour
         this.money = Mathf.Max(this.money + money,   0);
         drunkLevel = Mathf.Clamp(drunkLevel + drunk, 0, 100);
     }
+
+    public void ResetForNewDay()
+{
+    drunkLevel = 0;
+    // Penge og aura beholder vi — de følger med til næste aften
+}
 }

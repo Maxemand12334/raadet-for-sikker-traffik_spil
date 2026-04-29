@@ -12,12 +12,14 @@ public class TransportOption : MonoBehaviour,
     public string transportNavn = "Taxa";
     public int auraCost = 0;
     public int moneyCost = 0;
-    public bool isCykel = false;  // special — tjekker drunkLevel
+    public bool isCykel = false;
 
     [Header("Referencer")]
     public Image transportImage;
     public GameObject tooltipObject;
     public TextMeshProUGUI tooltipText;
+
+    bool harRaad;
 
     void Start()
     {
@@ -25,22 +27,38 @@ public class TransportOption : MonoBehaviour,
         tooltipObject.transform.localScale = Vector3.zero;
     }
 
+    // Tjek råd hver gang musen går over
+    void UpdateRaad()
+    {
+        harRaad = GameManager.Instance.money >= moneyCost;
+        transportImage.color = harRaad 
+            ? Color.white 
+            : new Color(0.3f, 0.3f, 0.3f, 1f);
+    }
+
     public void OnPointerEnter(PointerEventData e)
     {
-        // Lys op
-        transportImage.color = new Color(1f, 0.95f, 0.7f, 1f);
+        UpdateRaad();
 
-        // Byg tooltip tekst
-        string auraStr  = auraCost  >= 0 
-            ? $"+{auraCost} aura" 
-            : $"{auraCost} aura";
-        string moneyStr = moneyCost >= 0 
-            ? $"{moneyCost} kr" 
-            : $"{moneyCost} kr";
+        if (!harRaad)
+        {
+            transportImage.color = new Color(0.3f, 0.3f, 0.3f, 1f);
+            tooltipText.text = $"{transportNavn}\ntoo broke";
+        }
+        else
+        {
+            transportImage.color = new Color(1f, 0.95f, 0.7f, 1f);
 
-        tooltipText.text = $"{transportNavn}\n{auraStr}  ·  {moneyStr}";
+            string auraStr  = auraCost >= 0 
+                ? $"+{auraCost} aura" 
+                : $"{auraCost} aura";
+            string moneyStr = moneyCost > 0 
+                ? $"-{moneyCost} kr" 
+                : "gratis";
 
-    
+            tooltipText.text = $"{transportNavn}\n{auraStr}  ·  {moneyStr}";
+
+        }
 
         tooltipObject.SetActive(true);
         StopAllCoroutines();
@@ -49,13 +67,17 @@ public class TransportOption : MonoBehaviour,
 
     public void OnPointerExit(PointerEventData e)
     {
-        transportImage.color = Color.white;
+        UpdateRaad();
         StopAllCoroutines();
         StartCoroutine(ScaleTooltip(Vector3.one, Vector3.zero, hideAfter: true));
     }
 
     public void OnPointerClick(PointerEventData e)
     {
+        UpdateRaad();
+
+        if (!harRaad) return;
+
         if (isCykel && GameManager.Instance.drunkLevel >= 60)
         {
             SceneManager.LoadScene("HospitalScene");
@@ -63,6 +85,7 @@ public class TransportOption : MonoBehaviour,
         }
 
         GameManager.Instance.ApplyResult(auraCost, -moneyCost, 0);
+           GameManager.Instance.ResetForNewDay();
         SceneManager.LoadScene("MapScene");
     }
 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6c3020d67fa974f6992adca4646c76c6
+guid: aeac2ba85332c4502b398761a5d5d08e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3909567947608573584
-    second: taxi_0
+      213: -6482431913228018147
+    second: dart 2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: taxi_0
+      name: dart 2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1282
-        height: 750
+        x: 52
+        y: 46
+        width: 889
+        height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0964676a553914630800000000000000
-      internalID: 3909567947608573584
+      spriteID: d1e53633586c906a0800000000000000
+      internalID: -6482431913228018147
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      taxi_0: 3909567947608573584
+      dart 2_0: -6482431913228018147
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

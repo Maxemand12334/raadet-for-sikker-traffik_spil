@@ -85,23 +85,23 @@ public class SplitTheGGame : MonoBehaviour
         if (y >= pzMin && y <= pzMax)
         {
             // Perfekt
-            resultText.text = "Perfekt split! 🍺";
+            resultText.text = "godt splittet g";
             resultText.color = new Color(0.11f, 0.62f, 0.46f);
-            GameManager.Instance.ApplyResult(20, -30, 10);
+            GameManager.Instance.ApplyResult(20, -60, 20);
         }
         else if (y >= pzMin - 35f && y <= pzMax + 35f)
         {
             // Okay
             resultText.text = "Næsten... 😅";
             resultText.color = new Color(0.94f, 0.62f, 0.15f);
-            GameManager.Instance.ApplyResult(5, -30, 10);
+            GameManager.Instance.ApplyResult(5, -60, 20);
         }
         else
         {
             // Dårligt
             resultText.text = "Spildt! Det er pinligt 😬";
             resultText.color = new Color(0.89f, 0.29f, 0.29f);
-            GameManager.Instance.ApplyResult(-10, -30, 10);
+            GameManager.Instance.ApplyResult(-20, -60, 20);
         }
 
         UIManager.Instance.AdvanceTime(30f);
