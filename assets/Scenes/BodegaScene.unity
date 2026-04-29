@@ -1166,13 +1166,14 @@ GameObject:
   - component: {fileID: 989517663}
   - component: {fileID: 989517665}
   - component: {fileID: 989517664}
+  - component: {fileID: 989517666}
   m_Layer: 5
   m_Name: SlotMachinePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &989517663
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1236,6 +1237,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989517662}
   m_CullTransparentMesh: 1
+--- !u!114 &989517666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989517662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e329dd776995e48c5b152f7b208e3f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotMachineGame
+  reel1: {fileID: 1723726117}
+  reel2: {fileID: 1095222815}
+  reel3: {fileID: 1840927509}
+  symbols:
+  - {fileID: 7028616704906629411, guid: 017cf436a6fca4299aa3e70446d4cdfc, type: 3}
+  - {fileID: 8579111415464493206, guid: 7bc3671154c7f4ec09183de056535710, type: 3}
+  - {fileID: 1532440346177022758, guid: 21f49cbae118647ea831f8b961e3d855, type: 3}
+  - {fileID: 2845491494293411322, guid: b6afb6bfcec3d48d2815fc331cccb313, type: 3}
+  - {fileID: 7584875828100514122, guid: e3883ee10c9b241019e6ea098a8e2674, type: 3}
+  resultText: {fileID: 1704407429}
+  spinButton: {fileID: 1930074862}
+  lukButton: {fileID: 1480201211}
 --- !u!1 &1065235965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,7 +1854,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1480201212}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 989517666}
+        m_TargetAssemblyTypeName: SlotMachineGame, Assembly-CSharp
+        m_MethodName: LukPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1480201212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3044,7 +3081,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1930074863}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 989517666}
+        m_TargetAssemblyTypeName: SlotMachineGame, Assembly-CSharp
+        m_MethodName: Spin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1930074863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3291,7 +3340,7 @@ MonoBehaviour:
   moneyCost: 120
   drunkAmount: 0
   tidsMinutter: 30
-  miniGamePanel: {fileID: 0}
+  miniGamePanel: {fileID: 989517662}
   elementImage: {fileID: 1065235967}
   tooltipObject: {fileID: 1686591514}
   tooltipText: {fileID: 964591368}

@@ -49,14 +49,12 @@ public class TransportOption : MonoBehaviour,
         {
             transportImage.color = new Color(1f, 0.95f, 0.7f, 1f);
 
-            string auraStr  = auraCost >= 0 
-                ? $"+{auraCost} aura" 
-                : $"{auraCost} aura";
+         
             string moneyStr = moneyCost > 0 
                 ? $"-{moneyCost} kr" 
-                : "gratis";
+                : "for free";
 
-            tooltipText.text = $"{transportNavn}\n{auraStr}  ·  {moneyStr}";
+            tooltipText.text = $"{transportNavn}\n{moneyStr}";
 
         }
 
@@ -78,11 +76,11 @@ public class TransportOption : MonoBehaviour,
 
         if (!harRaad) return;
 
-        if (isCykel && GameManager.Instance.drunkLevel >= 60)
-        {
-            SceneManager.LoadScene("HospitalScene");
-            return;
-        }
+        if (isCykel && GameManager.Instance.drunkLevel >= 40)
+{
+    UIManager.Instance.CrashSequence();
+    return;
+}
 
         GameManager.Instance.ApplyResult(auraCost, -moneyCost, 0);
            GameManager.Instance.ResetForNewDay();
