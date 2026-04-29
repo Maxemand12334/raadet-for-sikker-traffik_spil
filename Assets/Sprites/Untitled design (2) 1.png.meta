@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 044d2c711cc6040fcbbe88cce13f33b1
+guid: 54749c249a76f4ec0a40d688ba8781b5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1646748327825810390
-    second: wheelchair_01_nor_gl_1k_0
+      213: 30134508908457914
+    second: Untitled design (2) 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wheelchair_01_nor_gl_1k_0
+      name: Untitled design (2) 1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1024
-        height: 1024
+        x: 25
+        y: 115
+        width: 457
+        height: 303
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6d3a68a11ec6ad610800000000000000
-      internalID: 1646748327825810390
+      spriteID: abf28fa1d2f0b6000800000000000000
+      internalID: 30134508908457914
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      wheelchair_01_nor_gl_1k_0: 1646748327825810390
+      Untitled design (2) 1_0: 30134508908457914
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
