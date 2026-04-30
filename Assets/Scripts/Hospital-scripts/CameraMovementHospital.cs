@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 
 public class CameraMovementHospital : MonoBehaviour
 {
@@ -13,8 +15,11 @@ public class CameraMovementHospital : MonoBehaviour
     public float pitchMin = -80;
     public float pitchMax = 10;
 
+    public SpoonGameManager spoonManager;
+
+    public GameObject activeInteractable;
+
     void Update () {
-        
         
         yaw += speedH * Input.GetAxis("Mouse X");
 
@@ -32,5 +37,10 @@ public class CameraMovementHospital : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
+        if(activeInteractable != null && Mouse.current["leftButton"].IsPressed() && spoonManager.getGameState() != SpoonGameManager.GameStates.active)
+        {
+            Debug.Log("pressed");
+            spoonManager.SetGameStateActive();
+        }
     }
 }

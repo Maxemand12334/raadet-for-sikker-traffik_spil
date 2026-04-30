@@ -15,7 +15,8 @@ public class selectable : MonoBehaviour
 
     private Vector3 targetPosition;
     private Vector3 originalPos;
-
+    bool active = false;
+    public float newLocationSpeed = 5;
 
     void Start()
     {
@@ -24,11 +25,29 @@ public class selectable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!active)
+        InactiveBehaviour();
+        else
+        {
+            if(Vector3.Magnitude(this.transform.position - targetPosition) > 0.1 && Vector3.Magnitude(this.transform.position - targetPosition) != 0)
+            {
+                this.transform.position = Vector3.Lerp(this.transform.position, targetPosition, Time.deltaTime * newLocationSpeed);
+            } else
+            {
+                this.transform.position = targetPosition;
+            }
+        }
+        
 
-        if (CanInteract() && !isHovering)
+    }
+
+    void InactiveBehaviour()
+    {
+             if (CanInteract() && !isHovering)
         {
             targetPosition = transform.position + new Vector3(0,hoverAmount,0);
             isHovering = true;
+            cam.GetComponent<CameraMovementHospital>().activeInteractable = this.gameObject;
         }
         
         if (CanInteract() && isHovering)
@@ -45,8 +64,8 @@ public class selectable : MonoBehaviour
             this.transform.position = targetPosition;
             isHovering = false;
             }
+            cam.GetComponent<CameraMovementHospital>().activeInteractable = null;
         }
-
     }
 
     bool CanInteract()
@@ -62,4 +81,17 @@ public class selectable : MonoBehaviour
     {
         this.transform.position = Vector3.Lerp(this.transform.position, targetPosition, Time.deltaTime * hoverTime);
     }
+
+    public void Activate(Vector3 newPos)
+    {
+        targetPosition = newPos;
+        active = true;
+    }
+
+        public void Deactivate()
+    {
+        targetPosition = originalPos;
+        active = false;
+    }
+
 }
