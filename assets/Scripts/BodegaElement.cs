@@ -42,7 +42,7 @@ public void OnPointerEnter(PointerEventData e)
     {
         elementImage.color = new Color(1f, 0.95f, 0.7f, 1f);
 
-        string moneyStr = moneyCost > 0 ? $"{moneyCost}kr" : "for free";
+        string moneyStr = moneyCost > 0 ? $"{moneyCost} kr" : "for free";
         string tidStr = tidsMinutter >= 60 
             ? $"{tidsMinutter/60f:0.#} time" 
             : $"{tidsMinutter} min";
