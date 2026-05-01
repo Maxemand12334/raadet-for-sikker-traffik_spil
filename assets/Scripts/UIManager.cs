@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
     public AudioClip crashSound;
 
     float currentHour = 21f;
+    bool isCrashTransition = false;
 
     void Awake()
     {
@@ -53,15 +54,16 @@ void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     if (drunkContainer != null)
         drunkContainer.SetActive(inBodega || inTransport);
 
-    // Kun fade ind på hospitalsscenen
-    if (scene.name == "HospitalScene")
+    if (isCrashTransition && scene.name == "Hospital")
     {
+        // Fade ind langsomt på hospitalet
+        isCrashTransition = false;
         StopAllCoroutines();
         StartCoroutine(FadeIn());
     }
     else
     {
-        // Alle andre scener — ingen fade, bare sørg for overlay er væk
+        // Alle andre scener — ingen fade
         if (fadeOverlay != null)
             fadeOverlay.color = new Color(0f, 0f, 0f, 0f);
     }
@@ -126,8 +128,10 @@ IEnumerator DoCrashSequence()
     // Bliv sort i 4 sekunder mens lyden spiller
     yield return new WaitForSeconds(4f);
 
-    // Load hospital — FadeIn coroutine klarer faden ind
-    SceneManager.LoadScene("Hospital");
+    // Sæt et flag så OnSceneLoaded ved den skal fade ind
+    isCrashTransition = true;
+
+    SceneManager.LoadScene("HospitalScene");
 }
 
 IEnumerator FadeOut(float duration)

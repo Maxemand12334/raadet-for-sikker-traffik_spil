@@ -669,7 +669,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 2, y: -95.99}
-  m_SizeDelta: {x: 80, y: 80}
+  m_SizeDelta: {x: 80, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &517798413
 MonoBehaviour:
@@ -1611,7 +1611,7 @@ Transform:
   m_GameObject: {fileID: 1172717903}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.1, y: -1.02, z: 0}
+  m_LocalPosition: {x: -3.1, y: -1.1, z: 0}
   m_LocalScale: {x: 2.0224, y: 1.5799999, z: 1.5799999}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1671,7 +1671,7 @@ MonoBehaviour:
   beskrivelse: Giv en omgang
   auraCost: 50
   moneyCost: 120
-  drunkAmount: 10
+  drunkAmount: 40
   tidsMinutter: 30
   miniGamePanel: {fileID: 0}
   elementImage: {fileID: 1809079580}
@@ -3249,7 +3249,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 2, y: 100}
-  m_SizeDelta: {x: 80, y: 80}
+  m_SizeDelta: {x: 85, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1968732587
 MonoBehaviour:
@@ -3324,8 +3324,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 60.5}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchoredPosition: {x: 0, y: 85.12}
+  m_SizeDelta: {x: 80, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1973004909
 MonoBehaviour:
@@ -3400,7 +3400,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 557, y: 188}
+  m_AnchoredPosition: {x: 473.9, y: 188}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2057593546
@@ -3415,7 +3415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4d0625f7060455abcf1b8d3e9271e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarElement
-  elementNavn: "EnArmetTvykn\xE6gt"
+  elementNavn: Slot
   beskrivelse: Spil om penge
   auraCost: 50
   moneyCost: 120
@@ -3479,7 +3479,7 @@ MonoBehaviour:
   beskrivelse: Split the G
   auraCost: -20
   moneyCost: 60
-  drunkAmount: 20
+  drunkAmount: 30
   tidsMinutter: 40
   miniGamePanel: {fileID: 1803278112}
   elementImage: {fileID: 1755719267}
