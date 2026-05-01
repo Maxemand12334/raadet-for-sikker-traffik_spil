@@ -131,7 +131,7 @@ IEnumerator DoCrashSequence()
     // Sæt et flag så OnSceneLoaded ved den skal fade ind
     isCrashTransition = true;
 
-    SceneManager.LoadScene("HospitalScene");
+    SceneManager.LoadScene("Hospital");
 }
 
 IEnumerator FadeOut(float duration)
