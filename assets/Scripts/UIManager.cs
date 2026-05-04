@@ -74,7 +74,7 @@ void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         if (GameManager.Instance == null) return;
 
         auraText.text  = "Aura: " + GameManager.Instance.auraPoints;
-        moneyText.text = "Kr: "   + GameManager.Instance.money;
+        moneyText.text = GameManager.Instance.money + " DKK";
 
         if (timeText != null && timeText.gameObject.activeSelf)
             timeText.text = GetTimeString();

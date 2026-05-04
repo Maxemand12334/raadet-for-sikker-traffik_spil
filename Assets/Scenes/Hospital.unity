@@ -321,7 +321,9 @@ MonoBehaviour:
   targetRotationSpeed: 7
   rotationSpeed: 15
   targetPositionSpeed: 0.5
-  positionSpeed: 3
+  positionSpeed: 4
+  minDistFromCam: 0.507
+  maxDistFromCam: 0.54
   idleLocalPos: {x: 0.4, y: -0.05, z: 0.35}
   offScreenHorizontalOffset: 2
   rotateLeftKey: 15
@@ -1690,9 +1692,9 @@ Transform:
   m_GameObject: {fileID: 2066595539}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5046291, y: -0.49376035, z: -0.5829801, w: 0.40210003}
-  m_LocalPosition: {x: -0.000032703236, y: 0.0018268725, z: 0.00035520658}
-  m_LocalScale: {x: 0.0010000003, y: 0.0010000004, z: 0.0009999999}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: -0.000038, y: 0.001913, z: -0.000007}
+  m_LocalScale: {x: 0.0013, y: 0.0002, z: 0.0007}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1288160307}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

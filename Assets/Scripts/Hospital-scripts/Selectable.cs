@@ -29,7 +29,7 @@ public class selectable : MonoBehaviour
         InactiveBehaviour();
         else
         {
-            if(Vector3.Magnitude(this.transform.position - targetPosition) > 0.1 && Vector3.Magnitude(this.transform.position - targetPosition) != 0)
+            if(Vector3.Magnitude(this.transform.position - targetPosition) > 0.01 && Vector3.Magnitude(this.transform.position - targetPosition) != 0)
             {
                 this.transform.position = Vector3.Lerp(this.transform.position, targetPosition, Time.deltaTime * newLocationSpeed);
             } else

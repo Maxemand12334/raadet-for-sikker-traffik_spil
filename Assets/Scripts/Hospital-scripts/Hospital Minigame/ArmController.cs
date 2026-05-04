@@ -14,6 +14,8 @@ public class ArmController : MonoBehaviour
     private Vector3 localTargetPosition; 
     public float targetPositionSpeed = 5f;
     public float positionSpeed = 5f;
+    public float minDistFromCam = 0.05f;
+    public float maxDistFromCam = 2.0f;
 
     [Header("Floating Animation Settings")]
     public Vector3 idleLocalPos; // Where the arm sits normally
@@ -76,13 +78,17 @@ public class ArmController : MonoBehaviour
             targetRotation -= targetRotationSpeed * Time.deltaTime;
         }
 
+
+        //dit for movement limiting
+        float dist = Vector3.Magnitude(this.transform.position - cam.transform.position);            
+
         // --- Movement Input (Modifying the local offset) ---
         // Since we move along the Camera's forward, we just change the Z of the local offset
-        if (Keyboard.current[moveAwayKey].isPressed && !Keyboard.current[moveCloserKey].isPressed)
+        if (Keyboard.current[moveAwayKey].isPressed && !Keyboard.current[moveCloserKey].isPressed && dist < maxDistFromCam)
         {
             localTargetPosition += Vector3.forward * targetPositionSpeed * Time.deltaTime;
         }
-        else if (Keyboard.current[moveCloserKey].isPressed)
+        else if (Keyboard.current[moveCloserKey].isPressed && dist > minDistFromCam)
         {
             localTargetPosition -= Vector3.forward * targetPositionSpeed * Time.deltaTime;
         }

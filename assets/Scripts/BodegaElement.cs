@@ -54,57 +54,58 @@ public void OnPointerEnter(PointerEventData e)
     StopAllCoroutines();
     StartCoroutine(ScaleTooltip(Vector3.zero, Vector3.one));
 }
-    public void OnPointerExit(PointerEventData e)
+
+public void OnPointerExit(PointerEventData e)
+{
+    bool harPenge = GameManager.Instance.money >= moneyCost;
+    elementImage.color = harPenge ? Color.white : new Color(0.3f, 0.3f, 0.3f, 1f);
+    StopAllCoroutines();
+    StartCoroutine(ScaleTooltip(Vector3.one, Vector3.zero, hideAfter: true));
+}
+
+public void OnPointerClick(PointerEventData e)
+{
+    Debug.Log("Klikkede på " + elementNavn);
+
+    if (GameManager.Instance.money < moneyCost)
     {
-        bool harPenge = GameManager.Instance.money >= moneyCost;
-        elementImage.color = harPenge ? Color.white : new Color(0.3f, 0.3f, 0.3f, 1f);
-        StopAllCoroutines();
-        StartCoroutine(ScaleTooltip(Vector3.one, Vector3.zero, hideAfter: true));
+        Debug.Log("Ikke råd!");
+        return;
     }
 
-    public void OnPointerClick(PointerEventData e)
+    if (miniGamePanel != null)
     {
-        Debug.Log("Klik på " + elementNavn);
-
-        if (GameManager.Instance.money < moneyCost)
-        {
-            Debug.Log("Ikke råd!");
-            return;
-        }
-
-        if (miniGamePanel != null)
-        {
-            Debug.Log("Åbner " + miniGamePanel.name);
-            miniGamePanel.SetActive(true);
-            return;
-        }
-
-        GameManager.Instance.ApplyResult(auraCost, -moneyCost, drunkAmount);
-        UIManager.Instance.AdvanceTime(tidsMinutter);
+        Debug.Log("Åbner " + miniGamePanel.name);
+        miniGamePanel.SetActive(true);
+        return;
     }
 
-    IEnumerator ScaleTooltip(Vector3 from, Vector3 to, bool hideAfter = false)
+    GameManager.Instance.ApplyResult(auraCost, -moneyCost, drunkAmount);
+    UIManager.Instance.AdvanceTime(tidsMinutter);
+}
+
+IEnumerator ScaleTooltip(Vector3 from, Vector3 to, bool hideAfter = false)
+{
+    float duration = 0.15f;
+    float t = 0f;
+    tooltipObject.transform.localScale = from;
+
+    while (t < 1f)
     {
-        float duration = 0.15f;
-        float t = 0f;
-        tooltipObject.transform.localScale = from;
-
-        while (t < 1f)
-        {
-            t += Time.deltaTime / duration;
-            float scale = Mathf.LerpUnclamped(from.x, to.x, EaseOutBack(t));
-            tooltipObject.transform.localScale = Vector3.one * scale;
-            yield return null;
-        }
-
-        tooltipObject.transform.localScale = to;
-        if (hideAfter) tooltipObject.SetActive(false);
+        t += Time.deltaTime / duration;
+        float scale = Mathf.LerpUnclamped(from.x, to.x, EaseOutBack(t));
+        tooltipObject.transform.localScale = Vector3.one * scale;
+        yield return null;
     }
 
-    float EaseOutBack(float t)
-    {
-        float c1 = 1.70158f;
-        float c3 = c1 + 1f;
-        return 1f + c3 * Mathf.Pow(t - 1f, 3f) + c1 * Mathf.Pow(t - 1f, 2f);
-    }
+    tooltipObject.transform.localScale = to;
+    if (hideAfter) tooltipObject.SetActive(false);
+}
+
+float EaseOutBack(float t)
+{
+    float c1 = 1.70158f;
+    float c3 = c1 + 1f;
+    return 1f + c3 * Mathf.Pow(t - 1f, 3f) + c1 * Mathf.Pow(t - 1f, 2f);
+}
 }

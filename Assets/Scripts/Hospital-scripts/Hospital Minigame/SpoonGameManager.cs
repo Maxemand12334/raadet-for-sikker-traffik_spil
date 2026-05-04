@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.Burst.Intrinsics;
 using UnityEditor.Rendering;
 using UnityEngine;
 
@@ -34,9 +36,10 @@ public class SpoonGameManager : MonoBehaviour
     }
     void Update()
     {
-        if (score > 3)
+        if (score > 2)
         {
             SetGameStateInactive();
+            score = 0;
         }
     }
 
@@ -51,8 +54,10 @@ public class SpoonGameManager : MonoBehaviour
     public void SetGameStateInactive()
     {
         gameState = GameStates.inactive;
-        armParent.SetActive(false);
+        armParent.GetComponent<ArmController>().FloatOutRight();
+        StartCoroutine(armFloatOut());
         plate.gameObject.GetComponent<selectable>().Deactivate(); 
+
     }
 
     public void getFood(){
@@ -70,4 +75,12 @@ public class SpoonGameManager : MonoBehaviour
     {
         return gameState;
     }
+
+    IEnumerator armFloatOut()
+    {
+        
+        yield return new WaitForSeconds(1f);
+        armParent.SetActive(false);
+    }
+
 }
