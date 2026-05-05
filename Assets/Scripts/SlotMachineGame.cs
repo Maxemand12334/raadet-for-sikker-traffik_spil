@@ -25,8 +25,9 @@ public class SlotMachineGame : MonoBehaviour
     void OnEnable()
     {
         // Nulstil hver gang panelet åbnes
-        resultText.text = "Træk i armen!";
+        resultText.text = "You miss 100% of the shots you don't take.";
         resultText.color = Color.white;
+        resultText.fontSize = 32;
         spinButton.gameObject.SetActive(true);
         lukButton.gameObject.SetActive(false);
 
@@ -88,7 +89,7 @@ public class SlotMachineGame : MonoBehaviour
             // 3 ens — stor gevinst
             resultText.text = "JACKPOT! 🎰\n+100 kr";
             resultText.color = new Color(0.11f, 0.62f, 0.46f);
-            resultText.fontSize = 28;
+            resultText.fontSize = 32;
             GameManager.Instance.ApplyResult(5, 100, 0);
         }
         else if (result1 == result2 || result2 == result3 || result1 == result3)
@@ -96,7 +97,7 @@ public class SlotMachineGame : MonoBehaviour
             // 2 ens — lille gevinst
             resultText.text = "2 ens!\n+50 kr";
             resultText.color = new Color(0.94f, 0.62f, 0.15f);
-            resultText.fontSize = 22;
+            resultText.fontSize = 32;
             GameManager.Instance.ApplyResult(0, 50, 0);
         }
         else
@@ -104,7 +105,7 @@ public class SlotMachineGame : MonoBehaviour
             // Ingen ens — tab
             resultText.text = "Ingen held...\n-20 kr";
             resultText.color = new Color(0.89f, 0.29f, 0.29f);
-            resultText.fontSize = 18;
+            resultText.fontSize = 32;
             GameManager.Instance.ApplyResult(0, -20, 0);
         }
 
