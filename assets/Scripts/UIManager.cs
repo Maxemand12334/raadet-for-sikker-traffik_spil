@@ -34,6 +34,7 @@ public class UIManager : MonoBehaviour
             return;
         }
         Instance = this;
+        if(SceneManager.GetActiveScene().name != "TransportScene")
         DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += OnSceneLoaded;
     }

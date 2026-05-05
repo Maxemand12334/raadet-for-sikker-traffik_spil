@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using Unity.Mathematics;
 
 public class VenueButton : MonoBehaviour, 
     IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
@@ -17,6 +18,8 @@ public class VenueButton : MonoBehaviour,
     public Image venueImage;
     public GameObject tooltipObject;
     public TextMeshProUGUI tooltipText;
+    public GameObject soundPlayer;
+    public AudioClip hoverClip;
 
     bool isUnlocked;
 
@@ -45,6 +48,8 @@ public class VenueButton : MonoBehaviour,
     {
         venueImage.color = new Color(1f, 1f, 0.7f, 1f);
         tooltipText.text = $"{venueName}\nÅben: {aabningsTid}";
+        Instantiate(soundPlayer, Vector3.zero, Quaternion.identity);
+        soundPlayer.GetComponent<AudioSource>().clip = hoverClip;
     }
     else
     {

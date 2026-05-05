@@ -22,6 +22,8 @@ public class BodegaElement : MonoBehaviour,
     public Image elementImage;
     public GameObject tooltipObject;
     public TextMeshProUGUI tooltipText;
+    public GameObject soundPlayer;
+    public AudioClip hoverClip;
 
     void Start()
     {
@@ -48,6 +50,9 @@ public void OnPointerEnter(PointerEventData e)
             : $"{tidsMinutter} min";
 
         tooltipText.text = $"{elementNavn}\n{moneyStr}\n{tidStr}";
+
+        Instantiate(soundPlayer, Vector3.zero, Quaternion.identity);
+        soundPlayer.GetComponent<AudioSource>().clip = hoverClip;
     }
 
     tooltipObject.SetActive(true);

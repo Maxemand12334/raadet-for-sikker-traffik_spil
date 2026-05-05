@@ -1734,6 +1734,8 @@ MonoBehaviour:
   elementImage: {fileID: 1809079580}
   tooltipObject: {fileID: 1968732585}
   tooltipText: {fileID: 143218570}
+  soundPlayer: {fileID: 7956049069610707975, guid: d7be5db70015245e7a3d74dbec113b1d, type: 3}
+  hoverClip: {fileID: 8300000, guid: 520ac73500f854bc7bf2e0ef8a86bb16, type: 3}
 --- !u!1 &1367033319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1794,6 +1796,8 @@ MonoBehaviour:
   elementImage: {fileID: 898703521}
   tooltipObject: {fileID: 517798411}
   tooltipText: {fileID: 1756587842}
+  soundPlayer: {fileID: 7956049069610707975, guid: d7be5db70015245e7a3d74dbec113b1d, type: 3}
+  hoverClip: {fileID: 8300000, guid: 520ac73500f854bc7bf2e0ef8a86bb16, type: 3}
 --- !u!1 &1420968595
 GameObject:
   m_ObjectHideFlags: 0
@@ -3530,6 +3534,8 @@ MonoBehaviour:
   elementImage: {fileID: 1065235967}
   tooltipObject: {fileID: 1686591514}
   tooltipText: {fileID: 964591368}
+  soundPlayer: {fileID: 7956049069610707975, guid: d7be5db70015245e7a3d74dbec113b1d, type: 3}
+  hoverClip: {fileID: 8300000, guid: 520ac73500f854bc7bf2e0ef8a86bb16, type: 3}
 --- !u!1 &2085970975
 GameObject:
   m_ObjectHideFlags: 0
@@ -3590,6 +3596,8 @@ MonoBehaviour:
   elementImage: {fileID: 1755719267}
   tooltipObject: {fileID: 1973004907}
   tooltipText: {fileID: 555317537}
+  soundPlayer: {fileID: 7956049069610707975, guid: d7be5db70015245e7a3d74dbec113b1d, type: 3}
+  hoverClip: {fileID: 8300000, guid: 520ac73500f854bc7bf2e0ef8a86bb16, type: 3}
 --- !u!1 &2113374166
 GameObject:
   m_ObjectHideFlags: 0
@@ -3806,6 +3814,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2115651952}
   m_CullTransparentMesh: 1
+--- !u!1001 &2915064736558491562
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -5707102965804880766, guid: 25c60240bacca4fdfbfb82e57947b03b, type: 3}
+      propertyPath: m_Volume
+      value: 0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: -5707102965804880766, guid: 25c60240bacca4fdfbfb82e57947b03b, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 1ec1b6af62b9545188eb0a9a68ea35d2, type: 3}
+    - target: {fileID: 892041739418515053, guid: 25c60240bacca4fdfbfb82e57947b03b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.92915
+      objectReference: {fileID: 0}
+    - target: {fileID: 892041739418515053, guid: 25c60240bacca4fdfbfb82e57947b03b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 892041739418515053, guid: 25c60240bacca4fdfbfb82e57947b03b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.44248
+      objectReference: {fileID: 0}
+    - target: {fileID: 892041739418515053, guid: 25c60240bacca4fdfbfb82e57947b03b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 892041739418515053, guid: 25c60240bacca4fdfbfb82e57947b03b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 892041739418515053, guid: 25c60240bacca4fdfbfb82e57947b03b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 892041739418515053, guid: 25c60240bacca4fdfbfb82e57947b03b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 892041739418515053, guid: 25c60240bacca4fdfbfb82e57947b03b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 892041739418515053, guid: 25c60240bacca4fdfbfb82e57947b03b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 892041739418515053, guid: 25c60240bacca4fdfbfb82e57947b03b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7389093473825145649, guid: 25c60240bacca4fdfbfb82e57947b03b, type: 3}
+      propertyPath: m_Name
+      value: AmebientMusic
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 25c60240bacca4fdfbfb82e57947b03b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3816,3 +3889,4 @@ SceneRoots:
   - {fileID: 1172717905}
   - {fileID: 2113374169}
   - {fileID: 421640390}
+  - {fileID: 2915064736558491562}

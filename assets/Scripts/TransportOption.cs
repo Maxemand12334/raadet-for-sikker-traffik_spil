@@ -18,6 +18,8 @@ public class TransportOption : MonoBehaviour,
     public Image transportImage;
     public GameObject tooltipObject;
     public TextMeshProUGUI tooltipText;
+    public GameObject soundPlayer;
+    public AudioClip hoverClip;
 
     bool harRaad;
 
@@ -56,6 +58,8 @@ public class TransportOption : MonoBehaviour,
 
             tooltipText.text = $"{transportNavn}\n{moneyStr}";
 
+            Instantiate(soundPlayer, Vector3.zero, Quaternion.identity);
+            soundPlayer.GetComponent<AudioSource>().clip = hoverClip;
         }
 
         tooltipObject.SetActive(true);
@@ -77,10 +81,10 @@ public class TransportOption : MonoBehaviour,
         if (!harRaad) return;
 
         if (isCykel && GameManager.Instance.drunkLevel >= 40)
-{
-    UIManager.Instance.CrashSequence();
-    return;
-}
+        {
+            UIManager.Instance.CrashSequence();
+            return;
+        }
 
         GameManager.Instance.ApplyResult(auraCost, -moneyCost, 0);
            GameManager.Instance.ResetForNewDay();
