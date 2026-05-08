@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 6d093443d94e74554960372cb721d24d
+guid: 2e6c5f52439eb4e809d6daed24fab6f5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7111969943574635211
-    second: glass_0
+      213: 5980720607117099358
+    second: Untitled_Artwork 30_0
+  - first:
+      213: 2076779001367365132
+    second: Untitled_Artwork 30_1
+  - first:
+      213: 5128640966006066252
+    second: Untitled_Artwork 30_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -96,30 +102,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: glass_0
+      name: Untitled_Artwork 30_0
       rect:
         serializedVersion: 2
-        x: 470
-        y: 379
-        width: 3135
-        height: 4938
+        x: 59
+        y: 955
+        width: 21
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bc2650c9bfac2b260800000000000000
-      internalID: 7111969943574635211
+      spriteID: e51c21874b9cff250800000000000000
+      internalID: 5980720607117099358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork 30_1
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 73
+        width: 1798
+        height: 2627
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c060e7d9f7332dc10800000000000000
+      internalID: 2076779001367365132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled_Artwork 30_2
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 606
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4cce4f29c79c2740800000000000000
+      internalID: 5128640966006066252
       vertices: []
       indices: 
       edges: []
@@ -138,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      glass_0: 7111969943574635211
+      Untitled_Artwork 30_0: 5980720607117099358
+      Untitled_Artwork 30_1: 2076779001367365132
+      Untitled_Artwork 30_2: 5128640966006066252
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

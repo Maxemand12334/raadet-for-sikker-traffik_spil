@@ -188,6 +188,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1642608565762106740, guid: 5b37605785d3a460692cd9511eb052b0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8db0e571d8784430aa5970fd49735038, type: 3}
+    - target: {fileID: 1642608565762106740, guid: 5b37605785d3a460692cd9511eb052b0, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642608565762106740, guid: 5b37605785d3a460692cd9511eb052b0, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642608565762106740, guid: 5b37605785d3a460692cd9511eb052b0, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3117279048410225523, guid: 5b37605785d3a460692cd9511eb052b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3183568646642343239, guid: 5b37605785d3a460692cd9511eb052b0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6d093443d94e74554960372cb721d24d, type: 3}
     - target: {fileID: 4526568203209811270, guid: 5b37605785d3a460692cd9511eb052b0, type: 3}
       propertyPath: m_Name
       value: UIManager
@@ -1380,8 +1404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d8edc8e568841e3bd3dafbb650a6ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransportOption
-  transportNavn: Bike
-  auraCost: -20
+  transportNavn: Cykel
+  auraCost: -10
   moneyCost: 0
   isCykel: 1
   transportImage: {fileID: 1054877350}
@@ -1440,7 +1464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransportOption
   transportNavn: Taxa
-  auraCost: 10
+  auraCost: -50
   moneyCost: 150
   isCykel: 0
   transportImage: {fileID: 2130476125}

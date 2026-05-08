@@ -13,8 +13,14 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI timeText;
 
+    public GameObject HUD;
+
+    [Header("Cutscene text")]
+    public GameObject itsLateMessage;
+
     [Header("Drunk indikator")]
     public GameObject drunkContainer;
+    public Sprite fullDrunkContainer;
     public Image drunkFill;
 
     [Header("Fade")]
@@ -25,7 +31,7 @@ public class UIManager : MonoBehaviour
     public AudioClip crashSound;
 
     float currentHour = 21f;
-    bool isCrashTransition = false;
+    bool shouldFadeIn = false;
 
     void Awake()
     {
@@ -34,8 +40,9 @@ public class UIManager : MonoBehaviour
             return;
         }
         Instance = this;
-        if(SceneManager.GetActiveScene().name != "TransportScene")
-        DontDestroyOnLoad(gameObject);
+        // drunkFill.color = Color.white;
+        // if(SceneManager.GetActiveScene().name != "TransportScene")
+        // DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -55,16 +62,16 @@ void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     if (drunkContainer != null)
         drunkContainer.SetActive(inBodega || inTransport);
 
-    if (isCrashTransition && scene.name == "Hospital")
+    if (shouldFadeIn)
     {
-        // Fade ind langsomt på hospitalet
-        isCrashTransition = false;
+        // Fade ind langsomt
+        shouldFadeIn = false;
         StopAllCoroutines();
         StartCoroutine(FadeIn());
     }
     else
     {
-        // Alle andre scener — ingen fade
+        // eller ikke
         if (fadeOverlay != null)
             fadeOverlay.color = new Color(0f, 0f, 0f, 0f);
     }
@@ -80,8 +87,14 @@ void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         if (timeText != null && timeText.gameObject.activeSelf)
             timeText.text = GetTimeString();
 
-        if (drunkFill != null)
+        if (drunkFill != null){
             drunkFill.fillAmount = GameManager.Instance.drunkLevel / 100f;
+            // if (drunkFill.fillAmount == 100)
+            // {
+            //     drunkContainer.GetComponent<Image>().sprite = fullDrunkContainer;
+            //     drunkFill.color = Color.white;
+            // }
+            }
     }
 
     public void StartBarNight()
@@ -105,13 +118,18 @@ void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     void BarCloses()
     {
         currentHour = 21f;
-        SceneManager.LoadScene("TransportScene");
+        StartCoroutine(DoTransportCutscene());
+        //SceneManager.LoadScene("TransportScene");
     }
 
     // Kaldes fra TransportOption når man vælger cykel og er fuld
     public void CrashSequence()
     {
         StartCoroutine(DoCrashSequence());
+    }
+
+    public void TransportCutscene(){
+        DoTransportCutscene();
     }
 
 IEnumerator DoCrashSequence()
@@ -130,9 +148,27 @@ IEnumerator DoCrashSequence()
     yield return new WaitForSeconds(4f);
 
     // Sæt et flag så OnSceneLoaded ved den skal fade ind
-    isCrashTransition = true;
+    shouldFadeIn = true;
+
+    HUD.SetActive(false);
 
     SceneManager.LoadScene("Hospital");
+}
+
+IEnumerator DoTransportCutscene()
+{
+    // Fade til sort over 1 sekund
+    yield return StartCoroutine(FadeOut(0.5f));
+
+    // Bliv sort i 4 sekunder mens lyden spiller
+    yield return new WaitForSeconds(0.5f);
+    itsLateMessage.SetActive(true);
+    yield return new WaitForSeconds(3f);
+    // Sæt et flag så OnSceneLoaded ved den skal fade ind
+    shouldFadeIn = true;
+    itsLateMessage.SetActive(false);
+    
+    SceneManager.LoadScene("TransportScene");
 }
 
 IEnumerator FadeOut(float duration)

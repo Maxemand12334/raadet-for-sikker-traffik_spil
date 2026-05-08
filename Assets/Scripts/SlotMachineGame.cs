@@ -87,7 +87,7 @@ public class SlotMachineGame : MonoBehaviour
         if (result1 == result2 && result2 == result3)
         {
             // 3 ens — stor gevinst
-            resultText.text = "JACKPOT! 🎰\n+100 kr";
+            resultText.text = "JACKPOT! \n+100 kr";
             resultText.color = new Color(0.11f, 0.62f, 0.46f);
             resultText.fontSize = 32;
             GameManager.Instance.ApplyResult(5, 100, 0);

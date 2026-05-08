@@ -85,21 +85,21 @@ public class SplitTheGGame : MonoBehaviour
         if (y >= pzMin && y <= pzMax)
         {
             // Perfekt
-            resultText.text = "godt splittet g";
+            resultText.text = "Godt splittet G";
             resultText.color = new Color(0.11f, 0.62f, 0.46f);
             GameManager.Instance.ApplyResult(20, -60, 20);
         }
         else if (y >= pzMin - 35f && y <= pzMax + 35f)
         {
             // Okay
-            resultText.text = "Næsten... 😅";
+            resultText.text = "Næsten...";
             resultText.color = new Color(0.94f, 0.62f, 0.15f);
             GameManager.Instance.ApplyResult(5, -60, 20);
         }
         else
         {
             // Dårligt
-            resultText.text = "Spildt! Det er pinligt 😬";
+            resultText.text = "Spildt! Det er pinligt!";
             resultText.color = new Color(0.89f, 0.29f, 0.29f);
             GameManager.Instance.ApplyResult(-20, -60, 20);
         }
@@ -108,8 +108,8 @@ public class SplitTheGGame : MonoBehaviour
         lukButton.gameObject.SetActive(true);
     }
 
-    public void LukPanel()
-    {
+    public void ClosePanel()
+    {   
         gameObject.SetActive(false);
     }
 }

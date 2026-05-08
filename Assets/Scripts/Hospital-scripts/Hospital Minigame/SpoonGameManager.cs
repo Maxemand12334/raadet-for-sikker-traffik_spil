@@ -18,8 +18,6 @@ public class SpoonGameManager : MonoBehaviour
 
     public float score = 0;
 
-    private bool isSpoonFull = false;
-
     public enum GameStates
     {
         active,
@@ -61,12 +59,10 @@ public class SpoonGameManager : MonoBehaviour
     }
 
     public void getFood(){
-        isSpoonFull = true;
         spoonFull.SetActive(true);
     }
     
     public void eatFood(){
-        isSpoonFull = false;
         spoonFull.SetActive(false); 
         score += scoreAmount;  
     }

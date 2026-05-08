@@ -593,7 +593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c9f0454d71a46f19c1c4b48754ddbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VenueButton
-  venueName: "S\xF8pavillionen"
+  venueName: Klubben
   requiredAura: 250
   aabningsTid: 00:00 - 05:00
   venueImage: {fileID: 2143409330}
@@ -1432,8 +1432,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 198, y: 92.1}
-  m_SizeDelta: {x: 127.8, y: 91.9}
+  m_AnchoredPosition: {x: 198, y: 107.7}
+  m_SizeDelta: {x: 127.8, y: 146.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1207183345
 MonoBehaviour:
@@ -1455,7 +1455,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7705355389563996771, guid: 637cf21a2593b4d0ea6679ddfdc0e0cb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4b670df51e45b4f0f89d7025367e58c9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2076,8 +2076,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 198, y: 92.1}
-  m_SizeDelta: {x: 152, y: 99.7}
+  m_AnchoredPosition: {x: 194, y: 92.1}
+  m_SizeDelta: {x: 177.1, y: 259}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1510330951
 MonoBehaviour:
@@ -2099,7 +2099,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 30134508908457914, guid: 54749c249a76f4ec0a40d688ba8781b5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 024763c12a0cf4fb5b51fa8b51078509, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2690,8 +2690,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 198, y: 89.5}
-  m_SizeDelta: {x: 143.9, y: 104.2}
+  m_AnchoredPosition: {x: 197.1, y: 119.8}
+  m_SizeDelta: {x: 139, y: 188.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2143409330
 MonoBehaviour:
@@ -2713,7 +2713,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7141765067525904753, guid: f84947a4b90294bf0b69005b209616a6, type: 3}
+  m_Sprite: {fileID: 2076779001367365132, guid: 2e6c5f52439eb4e809d6daed24fab6f5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2739,6 +2739,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1373049630457455255, guid: 5b37605785d3a460692cd9511eb052b0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -73.20203
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642608565762106740, guid: 5b37605785d3a460692cd9511eb052b0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8db0e571d8784430aa5970fd49735038, type: 3}
+    - target: {fileID: 1642608565762106740, guid: 5b37605785d3a460692cd9511eb052b0, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642608565762106740, guid: 5b37605785d3a460692cd9511eb052b0, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642608565762106740, guid: 5b37605785d3a460692cd9511eb052b0, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1901964927182312727, guid: 5b37605785d3a460692cd9511eb052b0, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -2763,6 +2783,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3183568646642343239, guid: 5b37605785d3a460692cd9511eb052b0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6d093443d94e74554960372cb721d24d, type: 3}
     - target: {fileID: 4526568203209811270, guid: 5b37605785d3a460692cd9511eb052b0, type: 3}
       propertyPath: m_Name
       value: UIManager
@@ -2818,6 +2842,10 @@ PrefabInstance:
     - target: {fileID: 6929210512668809041, guid: 5b37605785d3a460692cd9511eb052b0, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950306627643496245, guid: 5b37605785d3a460692cd9511eb052b0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -40.19995
       objectReference: {fileID: 0}
     - target: {fileID: 8875677566297090669, guid: 5b37605785d3a460692cd9511eb052b0, type: 3}
       propertyPath: m_Volume

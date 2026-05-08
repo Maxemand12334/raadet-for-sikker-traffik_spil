@@ -45,7 +45,7 @@ public class TransportOption : MonoBehaviour,
         if (!harRaad)
         {
             transportImage.color = new Color(0.3f, 0.3f, 0.3f, 1f);
-            tooltipText.text = $"{transportNavn}\ntoo broke";
+            tooltipText.text = $"{transportNavn}\nDu er broke";
         }
         else
         {
@@ -54,7 +54,7 @@ public class TransportOption : MonoBehaviour,
          
             string moneyStr = moneyCost > 0 
                 ? $"-{moneyCost} kr" 
-                : "for free";
+                : "Gratis";
 
             tooltipText.text = $"{transportNavn}\n{moneyStr}";
 

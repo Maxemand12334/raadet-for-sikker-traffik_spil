@@ -38,18 +38,18 @@ public void OnPointerEnter(PointerEventData e)
     if (!harPenge)
     {
         elementImage.color = new Color(0.3f, 0.3f, 0.3f, 1f);
-        tooltipText.text = $"{elementNavn}\ntoo broke";
+        tooltipText.text = "For fattig";
     }
     else
     {
         elementImage.color = new Color(1f, 0.95f, 0.7f, 1f);
 
-        string moneyStr = moneyCost > 0 ? $"{moneyCost} kr" : "for free";
+        string moneyStr = moneyCost > 0 ? $"{moneyCost} kr" : "Gratis";
         string tidStr = tidsMinutter >= 60 
             ? $"{tidsMinutter/60f:0.#} time" 
             : $"{tidsMinutter} min";
 
-        tooltipText.text = $"{elementNavn}\n{moneyStr}\n{tidStr}";
+        tooltipText.text = moneyStr;
 
         Instantiate(soundPlayer, Vector3.zero, Quaternion.identity);
         soundPlayer.GetComponent<AudioSource>().clip = hoverClip;
